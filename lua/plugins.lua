@@ -32,6 +32,8 @@ return require('packer').startup(function(use)
     {'hrsh7th/nvim-cmp'},     -- Required
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
     {'L3MON4D3/LuaSnip'},     -- Required
-  }
+  },
+  -- Schemas
+  use "b0o/schemastore.nvim"
 }
 end)
