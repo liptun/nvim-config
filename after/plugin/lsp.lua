@@ -1,13 +1,12 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-	lsp.default_keymaps({buffer = bufnr})
-	local opts = {buffer = bufnr, remap = false}
-	vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
+  lsp.default_keymaps({buffer = bufnr})
+  local opts = {buffer = bufnr, remap = false}
+  vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
 
 end)
 
--- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 require('lspconfig').jsonls.setup {
@@ -22,6 +21,13 @@ require('lspconfig').jsonls.setup {
 lsp.ensure_installed({
   'tsserver',
   'eslint',
+  'jsonls',
+  'html',
+  'cssls',
+  'lua_ls',
+  'bashls',
+  'pyright',
+  'pylsp'
 })
 
 local cmp = require('cmp')
