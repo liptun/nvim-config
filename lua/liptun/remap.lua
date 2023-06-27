@@ -12,5 +12,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>t", function () vim.cmd("terminal") end)
+vim.keymap.set("n", "<leader>t", function() vim.cmd("terminal") end)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+vim.keymap.set("n", "<leader>F", function() vim.lsp.buf.format() end)
