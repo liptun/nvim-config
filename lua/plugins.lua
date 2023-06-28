@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use('tveskag/nvim-blame-line')
   use('prettier/vim-prettier')
+  use('Slotos/telescope-lsp-handlers.nvim')
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -21,7 +22,7 @@ return require('packer').startup(function(use)
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
-      {                        -- Optional
+      {                            -- Optional
         'williamboman/mason.nvim',
         run = function()
           pcall(vim.cmd, 'MasonUpdate')
@@ -30,9 +31,9 @@ return require('packer').startup(function(use)
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     },
     -- Schemas
     use "b0o/schemastore.nvim"
