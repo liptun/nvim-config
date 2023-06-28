@@ -1,5 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
   use({
@@ -11,7 +9,6 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
   use('tveskag/nvim-blame-line')
   use('prettier/vim-prettier')
   use('Slotos/telescope-lsp-handlers.nvim')
@@ -35,7 +32,7 @@ return require('packer').startup(function(use)
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
       { 'L3MON4D3/LuaSnip' },     -- Required
     },
-    -- Schemas
-    use "b0o/schemastore.nvim"
   }
+  -- Schemas
+  use "b0o/schemastore.nvim"
 end)
