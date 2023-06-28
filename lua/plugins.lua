@@ -35,4 +35,5 @@ return require('packer').startup(function(use)
   }
   -- Schemas
   use "b0o/schemastore.nvim"
+  use { 'nvim-lualine/lualine.nvim' }
 end)
