@@ -29,8 +29,10 @@ require("telescope").setup({
 })
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
+vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 
 require('telescope-lsp-handlers').setup({
   declaration = {
