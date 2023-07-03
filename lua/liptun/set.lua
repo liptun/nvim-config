@@ -24,3 +24,4 @@ vim.opt.mouse = nil
 vim.opt.showcmd = true
 vim.opt.timeoutlen = 800
 
+vim.opt.termguicolors = true
