@@ -17,7 +17,7 @@ custom_gruvbox.command.c.bg = nil
 
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = custom_gruvbox,
     component_separators = { left = '|', right = '|' },
     section_separators = { left = '', right = '' },
