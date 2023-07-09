@@ -1,6 +1,6 @@
 function SetFiletype()
   local fileType = vim.bo.filetype
-  local newFileType = vim.fn.input("Current filetype: "..fileType..". New filetype:")
+  local newFileType = vim.fn.input("Current filetype: "..fileType..". New filetype: ")
   if newFileType ~= "" then
     vim.cmd("set filetype=" .. newFileType)
   end

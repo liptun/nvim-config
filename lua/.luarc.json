@@ -29,5 +29,6 @@
         "/Users/liptun/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after",
         "/Users/liptun/.config/nvim/after",
         "${3rd}/luassert/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }
