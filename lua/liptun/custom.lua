@@ -8,3 +8,8 @@ end
 
 vim.keymap.set("n", "<leader>sf", function() SetFiletype() end)
 
+function GetCurrentFileLocation()
+  vim.cmd("echo expand('%:p')")
+end
+
+vim.cmd([[command! FileLocation lua GetCurrentFileLocation()]])
