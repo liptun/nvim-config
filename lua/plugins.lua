@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')
   use({
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
   })
   use('ellisonleao/gruvbox.nvim')
