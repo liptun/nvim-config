@@ -98,15 +98,4 @@ cmp.setup {
   }
 }
 
-lspconfig.ccls.setup({
-  default_config = {
-    cmd = { 'ccls' },
-    filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
-    root_dir = function(fname)
-      return util.root_pattern(unpack({'compile_commands.json', '.ccls'}))(fname) or util.find_git_ancestor(fname)
-    end,
-    offset_encoding = 'utf-32',
-    -- ccls does not support sending a null root directory
-    single_file_support = false,
-  }
-})
+lspconfig.ccls.setup({})
