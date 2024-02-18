@@ -1,4 +1,4 @@
-󰊠local builtin = require('telescope.builtin')
+local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 
 require("telescope").setup({
