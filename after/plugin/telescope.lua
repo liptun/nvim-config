@@ -1,4 +1,4 @@
-local builtin = require('telescope.builtin')
+󰊠local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 
 require("telescope").setup({
@@ -33,7 +33,7 @@ local function openFileBrowser()
         builtin.git_files()
     end)
     if not isGitRepo then
-        builtin.find_files({hidden=true})
+        builtin.find_files({ hidden = true })
     end
 end
 
