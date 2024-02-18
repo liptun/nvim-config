@@ -30,7 +30,7 @@ require("telescope").setup({
 
 local function openFileBrowser()
     local isGitRepo = pcall(function()
-        builtin.git_files()
+        builtin.git_files({ show_untracked = true })
     end)
     if not isGitRepo then
         builtin.find_files({ hidden = true })
