@@ -26,7 +26,9 @@ lsp.on_attach(function(_, bufnr)
     -- vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts)
 end)
 
-lspconfig.tsserver.setup {}
+lspconfig.tsserver.setup {
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "mdx" }
+}
 lspconfig.eslint.setup {}
 
 require('lspconfig').lua_ls.setup {
