@@ -24,6 +24,9 @@ require 'treesitter-context'.setup {
     on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
 
+vim.treesitter.language.register('markdown', 'mdx')
+
 vim.keymap.set("n", "gc", function()
     require("treesitter-context").go_to_context()
 end, { silent = true })
+

@@ -26,8 +26,8 @@ lsp.on_attach(function(_, bufnr)
     -- vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts)
 end)
 
-lspconfig.tsserver.setup({})
-lspconfig.eslint.setup({})
+lspconfig.tsserver.setup {}
+lspconfig.eslint.setup {}
 
 require('lspconfig').lua_ls.setup {
     settings = {
@@ -57,7 +57,7 @@ lspconfig.jsonls.setup {
     },
 }
 
-lsp.ensure_installed({
+lsp.ensure_installed {
     'tsserver',
     'eslint',
     'jsonls',
@@ -67,23 +67,23 @@ lsp.ensure_installed({
     'bashls',
     'pyright',
     'pylsp'
-})
+}
 
 local cmp = require('cmp')
-local cmp_mappings = lsp.defaults.cmp_mappings({
+local cmp_mappings = lsp.defaults.cmp_mappings {
     ["<C-Space>"] = cmp.mapping.complete()
-})
+}
 
-lsp.setup_nvim_cmp({
+lsp.setup_nvim_cmp {
     mapping = cmp_mappings
-})
+}
 
-lsp.set_sign_icons({
+lsp.set_sign_icons {
     error = '',
     warn = '',
     hint = '󰉀',
     info = '󰙎'
-})
+}
 
 lsp.setup()
 
@@ -99,3 +99,7 @@ cmp.setup {
 }
 
 lspconfig.ccls.setup({})
+
+require 'lspconfig'.mdx_analyzer.setup {
+    filetypes = { "mdx" }
+}
