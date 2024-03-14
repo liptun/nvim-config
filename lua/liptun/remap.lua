@@ -16,3 +16,4 @@ vim.keymap.set("n", "<leader>t", function() vim.cmd("terminal") end)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<leader>ff", function() vim.lsp.buf.format() end)
+vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float() end)
