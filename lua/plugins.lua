@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/nvim-treesitter-context')
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
-    use('tveskag/nvim-blame-line')
     use('prettier/vim-prettier')
     use('Slotos/telescope-lsp-handlers.nvim')
 
