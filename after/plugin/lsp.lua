@@ -44,7 +44,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         'tsserver',
-        'eslint',
+        'eslint@4.8.0',
         'jsonls',
         'html',
         'cssls',
