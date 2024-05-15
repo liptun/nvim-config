@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
     use('lewis6991/gitsigns.nvim')
     use({
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.4',
+        tag = '0.1.6',
         requires = { { 'nvim-lua/plenary.nvim' } }
     })
     use('ellisonleao/gruvbox.nvim')
@@ -16,24 +16,20 @@ return require('packer').startup(function(use)
     use('prettier/vim-prettier')
     use('Slotos/telescope-lsp-handlers.nvim')
 
+
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v3.x',
         requires = {
-            -- LSP Support
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
             { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-
-            -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
-
-            -- Icons
-            { 'onsails/lspkind.nvim' }
-        },
+        }
     }
+
     use { 'b0o/schemastore.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
