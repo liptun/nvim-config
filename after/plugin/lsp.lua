@@ -83,7 +83,31 @@ require('mason-lspconfig').setup({
                     },
                 }
             })
+        end,
+        ansiblels = function()
+            require('lspconfig').ansiblels.setup {
+                filetypes = { 'yaml', 'yaml.ansible' },
+                settings = {
+                    ansible = {
+                        ansible = {
+                            path = 'ansible',
+                        },
+                        executionEnvironment = {
+                            enabled = true,
+                        },
+                        python = {
+                            interpreterPath = 'python3',
+                        },
+                    },
+                },
+            }
         end
     },
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.yml", "*.yaml" },
+    callback = function()
+        vim.bo.filetype = "yaml.ansible"
+    end,
+})
