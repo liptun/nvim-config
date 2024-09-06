@@ -50,12 +50,14 @@ require('mason-lspconfig').setup({
         'cssls',
         'lua_ls',
         'bashls',
-        'pyright',
-        'pylsp'
     },
     handlers = {
         function(server_name)
-            require('lspconfig')[server_name].setup({})
+            if server_name == 'tsserver' then
+                require('lspconfig').ts_ls.setup({})
+            else
+                require('lspconfig')[server_name].setup({})
+            end
         end,
         lua_ls = function()
             require('lspconfig').lua_ls.setup({
@@ -86,4 +88,3 @@ require('mason-lspconfig').setup({
         end,
     },
 })
-
