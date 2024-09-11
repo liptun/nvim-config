@@ -43,7 +43,7 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'tsserver',
+        'ts_ls',
         'eslint@4.8.0',
         'jsonls',
         'html',
@@ -53,11 +53,7 @@ require('mason-lspconfig').setup({
     },
     handlers = {
         function(server_name)
-            if server_name == 'tsserver' then
-                require('lspconfig').ts_ls.setup({})
-            else
-                require('lspconfig')[server_name].setup({})
-            end
+            require('lspconfig')[server_name].setup({})
         end,
         lua_ls = function()
             require('lspconfig').lua_ls.setup({
