@@ -47,7 +47,6 @@ return require('packer').startup(function(use)
             "antoinemadec/FixCursorHold.nvim",
             "nvim-treesitter/nvim-treesitter",
             "marilari88/neotest-vitest",
-            "thenbe/neotest-playwright"
         }
     }
 end)
