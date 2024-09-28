@@ -49,4 +49,5 @@ return require('packer').startup(function(use)
             "marilari88/neotest-vitest",
         }
     }
+    use { "RaafatTurki/hex.nvim" }
 end)
