@@ -20,9 +20,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.autoread = true
-vim.opt.mouse = nil
 vim.opt.showcmd = true
 vim.opt.timeoutlen = 800
 
 vim.opt.termguicolors = true
 vim.opt.showmode = false
+
+vim.opt.mouse = ""
