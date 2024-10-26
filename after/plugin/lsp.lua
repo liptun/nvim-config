@@ -84,3 +84,12 @@ require('mason-lspconfig').setup({
         end,
     },
 })
+
+require('lspconfig').gdscript.setup({
+    cmd = { "nc", "localhost", "6005" },
+    filetypes = { "gd", "gdscript" },
+    root_dir = require('lspconfig').util.root_pattern("project.godot"),
+    on_attach = function(client, bufnr)
+        -- Keymaps or other on_attach customizations
+    end,
+})
