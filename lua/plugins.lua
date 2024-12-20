@@ -12,10 +12,8 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/nvim-treesitter-context')
     use('ThePrimeagen/harpoon')
-    use('mbbill/undotree')
     use('prettier/vim-prettier')
     use('Slotos/telescope-lsp-handlers.nvim')
-
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -39,15 +37,5 @@ return require('packer').startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-    use {
-        "nvim-neotest/neotest",
-        requires = {
-            "nvim-neotest/nvim-nio",
-            "nvim-lua/plenary.nvim",
-            "antoinemadec/FixCursorHold.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "marilari88/neotest-vitest",
-        }
-    }
     use { "RaafatTurki/hex.nvim" }
 end)
