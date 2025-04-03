@@ -31,11 +31,4 @@ return require('packer').startup(function(use)
     use { 'b0o/schemastore.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
-    use { 'norcalli/nvim-colorizer.lua' }
-
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
-    use { "RaafatTurki/hex.nvim" }
 end)
