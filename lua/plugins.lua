@@ -31,4 +31,5 @@ return require('packer').startup(function(use)
     use { 'b0o/schemastore.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
+    use { 'luckasRanarison/tailwind-tools.nvim' }
 end)
