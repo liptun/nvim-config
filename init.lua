@@ -1,2 +1,2 @@
-require("plugins")
 require("liptun")
+require("plugins")
