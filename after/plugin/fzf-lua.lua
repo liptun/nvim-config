@@ -34,7 +34,7 @@ local function openFileBrowser()
 end
 
 vim.keymap.set("n", "<C-p>", openFileBrowser, {})
-vim.keymap.set("n", "<C-o>", function() fzf.files({ hidden = true }) end, {})
+vim.keymap.set("n", "<C-P>", function() fzf.files({ hidden = true }) end, {})
 vim.keymap.set("n", "<C-f>", fzf.live_grep, {})
 
 local opts = {
