@@ -1,35 +1,45 @@
-return require('packer').startup(function(use)
-    use('wbthomason/packer.nvim')
-    use('christoomey/vim-tmux-navigator')
-    use('tpope/vim-fugitive')
-    use('lewis6991/gitsigns.nvim')
-    use({
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.6',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    })
-    use('ellisonleao/gruvbox.nvim')
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/nvim-treesitter-context')
-    use('ThePrimeagen/harpoon')
-    use('prettier/vim-prettier')
-    use('Slotos/telescope-lsp-handlers.nvim')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-            { 'neovim/nvim-lspconfig' },
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' },
-        }
+require("lazy").setup({
+  { 'christoomey/vim-tmux-navigator' },
+  { 'tpope/vim-fugitive' },
+  { 'lewis6991/gitsigns.nvim' },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  { 'ellisonleao/gruvbox.nvim' },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate'
+  },
+  { 'nvim-treesitter/nvim-treesitter-context' },
+  { 'ThePrimeagen/harpoon' },
+  { 'prettier/vim-prettier' },
+  { 'Slotos/telescope-lsp-handlers.nvim' },
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
     }
-
-    use { 'b0o/schemastore.nvim' }
-    use { 'nvim-lualine/lualine.nvim' }
-    use { 'kyazdani42/nvim-web-devicons' }
-    use { 'luckasRanarison/tailwind-tools.nvim' }
-end)
+  },
+  { 'b0o/schemastore.nvim' },
+  { 'nvim-lualine/lualine.nvim' },
+  { 'kyazdani42/nvim-web-devicons' },
+  { 'luckasRanarison/tailwind-tools.nvim' }
+})
