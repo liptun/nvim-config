@@ -7,15 +7,9 @@ fzf.setup({
         row = 0.1,
         col = 0.5,
         border = "rounded",
-        keymap = {
-        },
     },
     preview = {
         horizontal = "right:55%",
-    },
-    keymap = {
-        builtin = {
-        },
     },
     files = {
         prompt = "> ",
@@ -34,16 +28,5 @@ local function openFileBrowser()
 end
 
 vim.keymap.set("n", "<C-p>", openFileBrowser, {})
-vim.keymap.set("n", "<C-P>", function() fzf.files({ hidden = true }) end, {})
+vim.keymap.set("n", "<C-l>", function() fzf.files({ hidden = true }) end, {})
 vim.keymap.set("n", "<C-f>", fzf.live_grep, {})
-
-local opts = {
-    lsp = {
-        _get_picker_opts = function(title)
-            return { prompt = title }
-        end,
-    }
-}
-
-vim.keymap.set("n", "gi", function() fzf.lsp_implementations({ prompt = "LSP Implementations" }) end)
-vim.keymap.set("n", "gt", function() fzf.lsp_type_definitions({ prompt = "LSP Type Definitions" }) end)
