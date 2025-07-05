@@ -19,14 +19,12 @@ fzf.setup({
 })
 
 local function openFileBrowser()
-    local ok = pcall(function()
+    if vim.fn.isdirectory(".git") == 1 then
         fzf.git_files({ show_untracked = true })
-    end)
-    if not ok then
+    else
         fzf.files({ hidden = true })
     end
 end
 
 vim.keymap.set("n", "<C-p>", openFileBrowser, {})
-vim.keymap.set("n", "<C-l>", function() fzf.files({ hidden = true }) end, {})
 vim.keymap.set("n", "<C-f>", fzf.live_grep, {})
