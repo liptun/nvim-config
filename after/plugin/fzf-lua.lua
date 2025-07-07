@@ -26,5 +26,12 @@ local function openFileBrowser()
     end
 end
 
+local function live_grep_git_files()
+    fzf.live_grep({
+        cmd = "rg --files | xargs rg --color=always --line-number --no-heading --smart-case",
+        silent = true,
+    })
+end
+
 vim.keymap.set("n", "<C-p>", openFileBrowser, {})
-vim.keymap.set("n", "<C-f>", fzf.live_grep, {})
+vim.keymap.set("n", "<C-f>", live_grep_git_files, {})
