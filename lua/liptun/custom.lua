@@ -13,3 +13,4 @@ function GetCurrentFileLocation()
 end
 
 vim.cmd([[command! FileLocation lua GetCurrentFileLocation()]])
+vim.cmd([[command! EslintFix execute '!npx eslint --fix "' . expand('%:p') . '"']])
