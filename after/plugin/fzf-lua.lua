@@ -28,7 +28,7 @@ end
 
 local function live_grep_git_files()
     fzf.live_grep({
-        cmd = "rg --files | xargs rg --color=always --line-number --no-heading --smart-case -F",
+        cmd = "rg --files 2>/dev/null | xargs rg --color=always --line-number --no-heading --smart-case -F 2>/dev/null",
         silent = true,
     })
 end
