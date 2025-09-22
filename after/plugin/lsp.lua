@@ -54,10 +54,11 @@ require('mason-lspconfig').setup({
     },
     handlers = {
         function(server_name)
-            require('lspconfig')[server_name].setup({})
+            -- default servers
+            vim.lsp.start(vim.lsp.config[server_name])
         end,
         lua_ls = function()
-            require('lspconfig').lua_ls.setup({
+            vim.lsp.config.lua_ls = {
                 settings = {
                     Lua = {
                         runtime = {
@@ -71,26 +72,30 @@ require('mason-lspconfig').setup({
                         },
                     },
                 },
-            })
+            }
+            vim.lsp.start(vim.lsp.config.lua_ls)
         end,
         jsonls = function()
-            require('lspconfig').jsonls.setup({
+            vim.lsp.config.jsonls = {
                 settings = {
                     json = {
                         schemas = require('schemastore').json.schemas(),
                         validate = { enable = true },
                     },
                 }
-            })
+            }
+            vim.lsp.start(vim.lsp.config.jsonls)
         end,
     },
 })
 
-require('lspconfig').gdscript.setup({
+-- GDScript custom server
+vim.lsp.config.gdscript = {
     cmd = { "nc", "localhost", "6005" },
     filetypes = { "gd", "gdscript" },
-    root_dir = require('lspconfig').util.root_pattern("project.godot"),
+    root_dir = vim.fs.dirname(vim.fs.find("project.godot", { upward = true })[1]),
     on_attach = function(client, bufnr)
         -- Keymaps or other on_attach customizations
     end,
-})
+}
+-- vim.lsp.start(vim.lsp.config.gdscript)
