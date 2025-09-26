@@ -1,5 +1,6 @@
 require("liptun.core.options")
 require("liptun.core.keymaps")
+require("liptun.core.custom")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -47,7 +48,12 @@ require("lazy").setup(
                 require("liptun.plugins.telescope")
             end
         },
-
+        {
+            "nvim-tree/nvim-web-devicons",
+            config = function()
+                require("nvim-web-devicons").setup { default = true }
+            end
+        },
         {
             "neovim/nvim-lspconfig",
             dependencies = {
@@ -87,6 +93,5 @@ require("lazy").setup(
                 require("liptun.plugins.lualine")
             end
         },
-        { 'kyazdani42/nvim-web-devicons' },
     }
 )
