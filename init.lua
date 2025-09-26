@@ -1,5 +1,5 @@
-require("core.options")
-require("core.keymaps")
+require("liptun.core.options")
+require("liptun.core.keymaps")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -23,21 +23,21 @@ require("lazy").setup(
         {
             "ellisonleao/gruvbox.nvim",
             config = function()
-                require("plugins.gruvbox")
+                require("liptun.plugins.gruvbox")
             end
         },
         {
             "ThePrimeagen/harpoon",
             dependencies = { "nvim-lua/plenary.nvim" },
             config = function()
-                require("plugins.harpoon")
+                require("liptun.plugins.harpoon")
             end
         },
         {
             "nvim-telescope/telescope.nvim",
             dependencies = { "nvim-lua/plenary.nvim" },
             config = function()
-                require("plugins.telescope")
+                require("liptun.plugins.telescope")
             end
         },
 
@@ -48,10 +48,9 @@ require("lazy").setup(
                 "williamboman/mason-lspconfig.nvim",
                 "b0o/schemastore.nvim",
                 "prettier/vim-prettier",
-                'luckasRanarison/tailwind-tools.nvim'
             },
             config = function()
-                require("plugins.lsp")
+                require("liptun.plugins.lsp")
             end,
         },
         {
@@ -61,13 +60,13 @@ require("lazy").setup(
                 'nvim-treesitter/nvim-treesitter-context'
             },
             config = function()
-                require("plugins/treesitter")
+                require("liptun.plugins.treesitter")
             end
         },
         {
             'nvim-lualine/lualine.nvim',
             config = function()
-                require("plugins/lualine")
+                require("liptun.plugins.lualine")
             end
         },
         { 'kyazdani42/nvim-web-devicons' },
