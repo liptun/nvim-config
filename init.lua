@@ -20,6 +20,13 @@ require("lazy").setup(
     {
         { "folke/lazy.nvim" },
         { 'christoomey/vim-tmux-navigator' },
+        { 'tpope/vim-fugitive' },
+        {
+            'lewis6991/gitsigns.nvim',
+            config = function()
+                require("liptun.plugins.gitsigns")
+            end
+        },
         {
             "ellisonleao/gruvbox.nvim",
             config = function()
