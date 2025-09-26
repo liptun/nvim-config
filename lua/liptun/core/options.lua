@@ -27,13 +27,3 @@ vim.opt.termguicolors = true
 vim.opt.showmode = false
 
 vim.opt.mouse = ""
-
--- Set tab settings for GDScript files
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "gdscript",
-    callback = function()
-        vim.opt_local.expandtab = false  -- Use tabs instead of spaces
-        vim.opt_local.tabstop = 4         -- Number of spaces a tab counts for
-        vim.opt_local.shiftwidth = 4      -- Number of spaces for each step of (auto)indent
-    end,
-})
