@@ -93,5 +93,12 @@ require("lazy").setup(
                 require("liptun.plugins.lualine")
             end
         },
+        {
+            "github/copilot.vim",
+            event = "InsertEnter",
+            config = function()
+                require("liptun.plugins.copilot");
+            end
+        }
     }
 )
