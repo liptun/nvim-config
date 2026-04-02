@@ -10,3 +10,11 @@ vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 vim.keymap.set("n", "<leader>ff", function() vim.lsp.buf.format() end)
 vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float() end)
+
+vim.keymap.set("n", "<leader>fp", function()
+    require("conform").format({
+        async = true,
+        timeout_ms = 1000,
+        lsp_format = "fallback",
+    })
+end, { desc = "Format with Conform" })

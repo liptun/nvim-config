@@ -42,5 +42,3 @@ require("mason-lspconfig").setup({
         end,
     },
 })
-
-vim.keymap.set("n", "<leader>fp", function() vim.cmd("PrettierAsync") end)

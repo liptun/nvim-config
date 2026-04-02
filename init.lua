@@ -60,7 +60,6 @@ require("lazy").setup(
                 "williamboman/mason.nvim",
                 "williamboman/mason-lspconfig.nvim",
                 "b0o/schemastore.nvim",
-                "prettier/vim-prettier",
             },
             config = function()
                 require("liptun.plugins.lsp")
@@ -99,6 +98,14 @@ require("lazy").setup(
             config = function()
                 require("liptun.plugins.copilot");
             end
-        }
+        },
+        {
+            "stevearc/conform.nvim",
+            event = { "BufWritePre" },
+            cmd = { "ConformInfo" },
+            config = function()
+                require("liptun.plugins.conform")
+            end
+        },
     }
 )
