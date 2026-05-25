@@ -14,7 +14,6 @@ vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float() end)
 vim.keymap.set("n", "<leader>fp", function()
     require("conform").format({
         async = true,
-        timeout_ms = 1000,
-        lsp_format = "fallback",
+        lsp_fallback = true
     })
-end, { desc = "Format with Conform" })
+end, { desc = "Format buffer (Prettier/Conform)" })

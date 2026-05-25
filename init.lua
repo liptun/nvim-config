@@ -105,7 +105,7 @@ require("lazy").setup(
             cmd = { "ConformInfo" },
             config = function()
                 require("liptun.plugins.conform")
-            end
+            end,
         },
     }
 )
