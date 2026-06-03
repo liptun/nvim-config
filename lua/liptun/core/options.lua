@@ -27,3 +27,7 @@ vim.opt.termguicolors = true
 vim.opt.showmode = false
 
 vim.opt.mouse = ""
+
+-- Ensure context window stays visible
+vim.opt.winheight = 1
+vim.opt.winminheight = 0

@@ -79,11 +79,55 @@ require("lazy").setup(
         {
             'nvim-treesitter/nvim-treesitter',
             build = ':TSUpdate',
-            dependencies = {
-                'nvim-treesitter/nvim-treesitter-context'
+            opts = {
+                ensure_installed = {
+                    "vimdoc",
+                    "lua",
+                    "javascript",
+                    "typescript",
+                    "yaml",
+                    "json",
+                    "html",
+                    "css",
+                    "rust",
+                    "markdown",
+                    "markdown_inline",
+                },
+                sync_install = false,
+                auto_install = true,
+                highlight = {
+                    enable = true,
+                    disable = function(lang, buf)
+                        local ft = vim.api.nvim_buf_get_option(buf, "filetype")
+                        local bt = vim.api.nvim_buf_get_option(buf, "buftype")
+                        if ft == "TelescopePrompt" or ft == "TelescopeResults" or bt == "prompt" then
+                            return true
+                        end
+                        return false
+                    end,
+                    additional_vim_regex_highlighting = false,
+                },
             },
             config = function()
-                require("liptun.plugins.treesitter")
+                vim.treesitter.language.register('markdown', 'mdx')
+            end,
+        },
+        {
+            'nvim-treesitter/nvim-treesitter-context',
+            dependencies = { 'nvim-treesitter/nvim-treesitter' },
+            opts = {
+                enable = true,
+                max_lines = 3,
+                min_window_height = 5,
+                line_numbers = true,
+                multiline_threshold = 20,
+                trim_scope = 'outer',
+                mode = 'cursor',
+                separator = '─',
+                zindex = 20,
+            },
+            config = function()
+                require("liptun.plugins.treesitter-context")
             end
         },
         {
